@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import "./styles/theme.css";
+
+body {
+    margin: 0 !important;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    border: 1px solid #d5d5d5;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: #615EF0;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: #615EF0;
+    border-radius: 1px;
+}

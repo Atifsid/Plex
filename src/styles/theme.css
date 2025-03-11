@@ -1,0 +1,5 @@
+@theme {
+    --spacing-main-width: calc(100% - 38px);
+    --spacing-main-height: 95vh;
+    --color-primary: #615EF0;
+}

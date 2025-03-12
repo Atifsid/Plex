@@ -4,13 +4,15 @@ import MessageBubble from './MessageBubble';
 import { FaPhoneAlt } from "react-icons/fa";
 import { GrAttachment } from "react-icons/gr";
 import { BsFillSendFill, BsThreeDotsVertical } from "react-icons/bs";
+import user1 from "/user1.png";
 
 const ChatArea = ({ activeChatUser }) => {
     const messagesEndRef = useRef(null);
     const chatData = {
         user: {
             name: 'Florencio Dorrance',
-            status: 'Online'
+            status: 'Online',
+            avatar: user1
         },
         messages: [
             { id: 1, sender: 'Florencio Dorrance', text: 'omg, this is amazing', time: '10:05' },
@@ -36,7 +38,7 @@ const ChatArea = ({ activeChatUser }) => {
             { id: 21, sender: 'Florencio Dorrance', text: 'woohoooo 🔥', time: '10:22' },
             { id: 22, sender: 'Florencio Dorrance', text: 'woohoooo 🔥', time: '10:22' },
             { id: 23, sender: 'Florencio Dorrance', text: 'woohoooo 🔥', time: '10:22' },
-        ]
+        ],
     };
 
     const scrollToBottom = () => {
@@ -51,7 +53,7 @@ const ChatArea = ({ activeChatUser }) => {
         <div className="flex flex-col flex-1 h-full">
             <div className="flex justify-between items-center p-3 border-b border-gray-200">
                 <div className="flex items-center">
-                    <Avatar user={chatData.user.name} emoji={chatData.user.avatar} showStatus statusType={chatData.user.status} />
+                    <Avatar img={chatData.user.avatar} />
                     <div className="ml-3">
                         <h2 className="text-base font-medium">{chatData.user.name}</h2>
                         <span className="text-xs text-green-500">{chatData.user.status}</span>
@@ -71,7 +73,6 @@ const ChatArea = ({ activeChatUser }) => {
                     <MessageBubble
                         key={message.id}
                         text={message.text}
-                        sender={message.sender}
                         time={message.time}
                         isMine={message.sender === 'me'}
                         avatar={message.sender === 'me' ? null : chatData.user.avatar}

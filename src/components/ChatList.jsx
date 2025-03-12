@@ -1,6 +1,12 @@
 import React from 'react';
 import Avatar from './Avatar';
 import Tag from './Tag';
+import user1 from "/user1.png";
+import user2 from "/user2.png";
+import user3 from "/user3.png";
+import user4 from "/user4.png";
+import user5 from "/user5.png";
+import user6 from "/user6.png";
 
 const ChatList = ({ activeChat, setActiveChat }) => {
     const chatList = [
@@ -12,14 +18,16 @@ const ChatList = ({ activeChat, setActiveChat }) => {
             tags: [
                 { text: 'Question', color: 'orange' },
                 { text: 'Help wanted', color: 'green' }
-            ]
+            ],
+            avatar: user1
         },
         {
             id: 2,
             name: 'Florencio Dorrance',
             lastMessage: 'woohoooo',
             time: '24m',
-            tags: [{ text: 'Some content', color: 'gray' }]
+            tags: [{ text: 'Some content', color: 'gray' }],
+            avatar: user2
         },
         {
             id: 3,
@@ -29,7 +37,8 @@ const ChatList = ({ activeChat, setActiveChat }) => {
             tags: [
                 { text: 'Bug', color: 'orange' },
                 { text: 'Hacktoberfest', color: 'green' }
-            ]
+            ],
+            avatar: user3
         },
         {
             id: 4,
@@ -39,21 +48,24 @@ const ChatList = ({ activeChat, setActiveChat }) => {
             tags: [
                 { text: 'Question', color: 'orange' },
                 { text: 'Some content', color: 'gray' }
-            ]
+            ],
+            avatar: user4
         },
         {
             id: 5,
             name: 'Geoffrey Mott',
             lastMessage: 'ayy 👌',
             time: '2d',
-            tags: [{ text: 'Request', color: 'green' }]
+            tags: [{ text: 'Request', color: 'green' }],
+            avatar: user5
         },
         {
             id: 6,
             name: 'Alfonzo Schuessler',
             lastMessage: 'perfect!',
             time: '1m',
-            tags: [{ text: 'Follow up', color: 'gray' }]
+            tags: [{ text: 'Follow up', color: 'gray' }],
+            avatar: user6
         }
     ];
 
@@ -66,7 +78,7 @@ const ChatList = ({ activeChat, setActiveChat }) => {
           ${chat.name === activeChat ? 'bg-gray-100' : ''}`}
                     onClick={() => setActiveChat(chat.name)}
                 >
-                    <Avatar user={chat.name} emoji={chat.avatar} />
+                    <Avatar img={chat.avatar} />
                     <div className="ml-3 flex-1 min-w-0">
                         <div className="flex justify-between items-center mb-1">
                             <h3 className="text-sm font-medium truncate">{chat.name}</h3>
